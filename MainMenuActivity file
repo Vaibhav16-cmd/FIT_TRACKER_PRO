@@ -1,0 +1,48 @@
+package com.example.fit_tracker_pro;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainMenuActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_menu);
+
+        Button bmiButton = findViewById(R.id.bmiButton);
+        Button calorieButton = findViewById(R.id.calorieButton);
+        Button waterButton = findViewById(R.id.waterButton);
+        Button savedResultsButton = findViewById(R.id.savedResultsButton);
+
+        bmiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenuActivity.this, MainActivity.class));
+            }
+        });
+
+        calorieButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenuActivity.this, CalorieCalculatorActivity.class));
+            }
+        });
+
+        waterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenuActivity.this, WaterIntakeActivity.class));
+            }
+        });
+
+        savedResultsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainMenuActivity.this, SavedResultsActivity.class));
+            }
+        });
+    }
+} 
